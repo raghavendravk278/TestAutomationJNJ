@@ -32,18 +32,10 @@ public class LaunchUrl extends Base_Class {
     	extenttest=extentreport.createTest("1");	
 		extenttest.log(Status.PASS, "Executing the TestCase "+"1" + "Order set is "+"Order_Set");
 		
-		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
-		WebDriver driver=new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
+		//WebDriver driver=new ChromeDriver();
 		
-		try {
-			String url=Utility_class.Reading_properties("URL");
-			driver.get(url);
-			//log.info("Passed as Actual Result is  "+"Actual_Result" + " Same as Expected Result "+"Exp_Result");
-		    //Capture_Screenshot("1", "Order_Set");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.out.println("URL is not available");
-		}
+		
 		
 	}
     

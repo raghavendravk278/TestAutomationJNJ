@@ -11,16 +11,19 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import pages.HomePage;
 
 
 
@@ -31,6 +34,9 @@ public class Base_Class {
 	public static ExtentReports extentreport;
 	public static ExtentTest extenttest;
 	public WebDriver driver;
+
+	
+	
 	public String Capture_Screenshot(String TC_ID, String Order_Set) throws IOException
 	{
 		Date date= new Date();
@@ -57,6 +63,26 @@ public class Base_Class {
 		
 	}
 	
+	@BeforeClass
+	public void setUp(){
+		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
+		driver=new ChromeDriver();
+		try {
+			String url=Utility_class.Reading_properties("URL");
+			driver.get(url);
+			//log.info("Passed as Actual Result is  "+"Actual_Result" + " Same as Expected Result "+"Exp_Result");
+		    Capture_Screenshot("1", "Order_Set");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("URL is not available");
+		}
+		//driver.manage().window().setSize(new Dimension(375,812));
+		System.out.println(driver.getTitle());
+		System.out.println("Setup Complete");
+		
+	}
+	
+	
 	@BeforeSuite
 	public static void Extent_Report(){
 	Date date =new Date();
@@ -75,6 +101,7 @@ public class Base_Class {
     public void tearDown() {
     	//to write or update test information to reporter
     	extentreport.flush();
+    	driver.quit();
     }	
 	
 
