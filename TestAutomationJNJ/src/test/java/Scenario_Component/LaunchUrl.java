@@ -31,7 +31,8 @@ public class LaunchUrl extends Base_Class {
     	SoftAssert sAssert= new SoftAssert();
     	extenttest=extentreport.createTest("1");	
 		extenttest.log(Status.PASS, "Executing the TestCase "+"1" + "Order set is "+"Order_Set");
-		
+		//extenttest.log(Status.PASS, extenttest.addScreencastFromPath(Capture_Screenshot("1", "Order_Set"));
+		extenttest.addScreenCaptureFromPath(Capture_Screenshot("1", "Order_Set"));
 		//System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 		//WebDriver driver=new ChromeDriver();
 		

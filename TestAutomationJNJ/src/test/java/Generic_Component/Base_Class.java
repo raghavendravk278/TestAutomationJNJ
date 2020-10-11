@@ -47,8 +47,9 @@ public class Base_Class {
 		
 		TakesScreenshot screenshot= (TakesScreenshot) driver;
 		File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotAs, new File("C:\\Selenium\\2020\\TestAutomationJNJ\\Screenshot"+TC_ID+"-"+Order_Set+"-"+ str));
+		FileUtils.copyFile(screenshotAs, new File("C:\\Selenium\\2020\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str));
 		String path="C:\\Selenium\\2020\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str;
+		System.out.println("Path is"+path);
 		return path;
 		
 		
