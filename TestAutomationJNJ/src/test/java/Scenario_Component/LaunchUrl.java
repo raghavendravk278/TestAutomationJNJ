@@ -1,8 +1,10 @@
 package Scenario_Component;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -26,10 +28,15 @@ public class LaunchUrl extends Base_Class {
 		
 	}
     
-    @Test
-    public void testCase1() {
+    @Test(dataProvider="dp_Validsearch",dataProviderClass=DataProvider_Component.Testdataprovider.class)
+    public void testCase1(Map<String,String> Search) {
         test = extentreport.createTest("Test Case 1", "PASSED test case");
         Assert.assertTrue(true);
+        String TC_ID = Search.get("TC_ID");
+    	String Order_Set = Search.get("Order_Set");		
+    	String Search_Item = Search.get("Search_Item");
+        Reporter.log(TC_ID+Order_Set+Search_Item);
+        
     }
     
     @Test
