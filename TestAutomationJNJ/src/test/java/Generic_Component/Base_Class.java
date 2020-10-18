@@ -20,6 +20,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
+import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -37,7 +38,7 @@ public class Base_Class {
 	public static ExtentReports extentreport;
 	public static ExtentTest test;
 	public WebDriver driver;
-
+    protected static Eyes eyes;
 	
 	
 	public String Capture_Screenshot(String TC_ID, String Order_Set) throws IOException
@@ -50,8 +51,8 @@ public class Base_Class {
 		
 		TakesScreenshot screenshot= (TakesScreenshot) driver;
 		File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotAs, new File("C:\\Selenium\\2020\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str));
-		String path="C:\\Selenium\\2020\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str;
+		FileUtils.copyFile(screenshotAs, new File("C:\\Users\\Vishnu\\git\\Myrepository\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str));
+		String path="C:\\Users\\Vishnu\\git\\Myrepository\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str;
 		System.out.println("Path is"+path);
 		return path;
 		
@@ -85,6 +86,7 @@ public class Base_Class {
 	public void setUp(){
 		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 		driver=new ChromeDriver();
+		initiateEyes();
 		try {
 			String url=Utility_class.Reading_properties("URL");
 			driver.get(url);
@@ -94,12 +96,33 @@ public class Base_Class {
 			// TODO Auto-generated catch block
 			System.out.println("URL is not available");
 		}
+		
+		
 		System.out.println(driver.getTitle());
 		System.out.println("Setup Complete");
 		
 	}
 	
 	
+	private static void initiateEyes() {
+		eyes=new Eyes();
+		String api_key = null;
+		try {
+			api_key = Utility_class.Reading_properties("applitools.api.key");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		eyes.setApiKey(api_key);
+		
+	}
+	public void validateWindow() {
+		eyes.open(driver, "Automation JNJ", Thread.currentThread().getStackTrace()[2].getMethodName());
+		eyes.checkWindow();
+        eyes.close();
+	}
+
+
 	@BeforeSuite
 	public static void Extent_Report(){
 	Date date =new Date();
@@ -127,6 +150,7 @@ public class Base_Class {
 	
     	extentreport.flush();
     	driver.quit();
+    	eyes.abortIfNotClosed();
     }	
 	
 

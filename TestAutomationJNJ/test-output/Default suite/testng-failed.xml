@@ -5,8 +5,10 @@
     <classes>
       <class name="Scenario_Component.LaunchUrl">
         <methods>
+          <include name="testCase1"/>
+          <include name="getResult"/>
           <include name="tearDown"/>
-          <include name="testLogin"/>
+          <include name="setUp"/>
           <include name="Extent_Report"/>
         </methods>
       </class> <!-- Scenario_Component.LaunchUrl -->
