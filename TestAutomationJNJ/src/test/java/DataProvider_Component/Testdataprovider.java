@@ -15,6 +15,13 @@ import Generic_Component.ExcelReadWrite;
 public class Testdataprovider {
 	
 	
+	@DataProvider(name="dp_Userlogin")
+	public static Iterator<Object[]> getUserloginchdata() throws IOException
+	{
+		
+		return commontestdata("Scenario_Login","User_Login");
+		
+	}
 	
 	@DataProvider(name="dp_Validsearch")
 	public static Iterator<Object[]> getValidserachdata() throws IOException
@@ -28,7 +35,7 @@ public class Testdataprovider {
 	public static Iterator<Object[]> commontestdata(String sheetname,String scriptname) throws IOException
 	{
 		
-		ExcelReadWrite xl= new ExcelReadWrite("C:\\Users\\Vishnu\\git\\Myrepository\\TestAutomationJNJ\\TestData\\Test_Data.xls");
+		ExcelReadWrite xl= new ExcelReadWrite("D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\TestData\\Test_Data.xls");
 		HSSFSheet Sheet = xl.Setsheet(sheetname);
 		
 		int RowCount = xl.getrowcount(Sheet);

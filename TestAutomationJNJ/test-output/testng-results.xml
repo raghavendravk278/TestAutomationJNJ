@@ -1,36 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-18T02:56:38Z" name="Default suite" finished-at="2020-10-18T02:57:07Z" duration-ms="28971">
+  <suite name="Default suite" duration-ms="27799" started-at="2020-11-07T02:56:37Z" finished-at="2020-11-07T02:57:05Z">
     <groups>
     </groups>
-    <test started-at="2020-10-18T02:56:38Z" name="Default test" finished-at="2020-10-18T02:57:07Z" duration-ms="28971">
+    <test name="Default test" duration-ms="27799" started-at="2020-11-07T02:56:37Z" finished-at="2020-11-07T02:57:05Z">
       <class name="Scenario_Component.LaunchUrl">
-        <test-method is-config="true" signature="Extent_Report()[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b]" started-at="2020-10-18T02:56:37Z" name="Extent_Report" finished-at="2020-10-18T02:56:38Z" duration-ms="360" status="PASS">
+        <test-method status="PASS" signature="Extent_Report()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="Extent_Report" is-config="true" duration-ms="293" started-at="2020-11-07T02:56:37Z" finished-at="2020-11-07T02:56:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Extent_Report -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b]" started-at="2020-10-18T02:56:38Z" name="setUp" finished-at="2020-10-18T02:56:47Z" duration-ms="9015" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="setUp" is-config="true" duration-ms="2819" started-at="2020-11-07T02:56:37Z" finished-at="2020-11-07T02:56:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLogin()[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b]" started-at="2020-10-18T02:56:47Z" name="testLogin" finished-at="2020-10-18T02:57:07Z" duration-ms="19918" status="PASS">
+        <test-method status="PASS" signature="testLaunchUrl()[pri:1, instance:Scenario_Component.LaunchUrl@1e127982]" name="testLaunchUrl" duration-ms="122" started-at="2020-11-07T02:56:40Z" finished-at="2020-11-07T02:56:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b]" started-at="2020-10-18T02:57:07Z" name="getResult" finished-at="2020-10-18T02:57:07Z" duration-ms="9" status="PASS">
+        </test-method> <!-- testLaunchUrl -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="5" started-at="2020-11-07T02:56:40Z" finished-at="2020-11-07T02:56:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testLogin status=SUCCESS method=LaunchUrl.testLogin()[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b] output={null}]]]>
+                <![CDATA[[TestResult name=testLaunchUrl status=SUCCESS method=LaunchUrl.testLaunchUrl()[pri:1, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Scenario_Component.LaunchUrl@2c78324b]" started-at="2020-10-18T02:57:07Z" name="tearDown" finished-at="2020-10-18T02:57:08Z" duration-ms="1645" status="PASS">
+        <test-method status="PASS" signature="testLoginLogout(java.util.Map)[pri:2, instance:Scenario_Component.LaunchUrl@1e127982]" name="testLoginLogout" duration-ms="10616" started-at="2020-11-07T02:56:40Z" data-provider="dp_Userlogin" finished-at="2020-11-07T02:56:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128, User_Password=Password6}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginLogout -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="1" started-at="2020-11-07T02:56:51Z" finished-at="2020-11-07T02:56:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginLogout status=SUCCESS method=LaunchUrl.testLoginLogout(java.util.Map)[pri:2, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="testAerRegistration()[pri:3, instance:Scenario_Component.LaunchUrl@1e127982]" name="testAerRegistration" duration-ms="13737" started-at="2020-11-07T02:56:51Z" finished-at="2020-11-07T02:57:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAerRegistration -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="1" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAerRegistration status=SUCCESS method=LaunchUrl.testAerRegistration()[pri:3, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="FAIL" signature="testCaseIntake()[pri:4, instance:Scenario_Component.LaunchUrl@1e127982]" name="testCaseIntake" duration-ms="9" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at PageObject_Component.CaseIntake.NavigateToFullDateEntry(CaseIntake.java:30)
+at Scenario_Component.LaunchUrl.testCaseIntake(LaunchUrl.java:180)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseIntake -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="8" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCaseIntake status=FAILURE method=LaunchUrl.testCaseIntake()[pri:4, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="testFullDataEntry()[pri:5, instance:Scenario_Component.LaunchUrl@1e127982]" name="testFullDataEntry" duration-ms="77" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFullDataEntry -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="1" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFullDataEntry status=SUCCESS method=LaunchUrl.testFullDataEntry()[pri:5, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="tearDown" is-config="true" duration-ms="564" started-at="2020-11-07T02:57:05Z" finished-at="2020-11-07T02:57:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
