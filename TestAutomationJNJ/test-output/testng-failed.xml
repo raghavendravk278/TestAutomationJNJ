@@ -6,8 +6,8 @@
       <class name="Scenario_Component.LaunchUrl">
         <methods>
           <include name="getResult"/>
+          <include name="testFullDataEntry" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="testCaseIntake"/>
           <include name="setUp"/>
           <include name="Extent_Report"/>
         </methods>

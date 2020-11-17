@@ -23,11 +23,11 @@ public class Testdataprovider {
 		
 	}
 	
-	@DataProvider(name="dp_Validsearch")
+	@DataProvider(name="dp_Casecreation")
 	public static Iterator<Object[]> getValidserachdata() throws IOException
 	{
 		
-		return commontestdata("Scenario_Search","Valid_Search");
+		return commontestdata("Scenario_CaseCreation","Case_Creation");
 		
 	}
 	

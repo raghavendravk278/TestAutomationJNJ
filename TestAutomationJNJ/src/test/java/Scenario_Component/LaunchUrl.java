@@ -1,28 +1,21 @@
 package Scenario_Component;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.Reporter;
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReporter;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Generic_Component.Base_Class;
 import PageObject_Component.AER_Registration;
 import PageObject_Component.CaseIntake;
+import PageObject_Component.FullDataEntry;
 
 
 public class LaunchUrl extends Base_Class {
@@ -35,7 +28,7 @@ public class LaunchUrl extends Base_Class {
     	test=extentreport.createTest("LaunchUrlTest");	
 		test.log(Status.PASS, "Executing the TestCase "+"1" + "Order set is "+"Order_Set");
 		//extenttest.log(Status.PASS, extenttest.addScreencastFromPath(Capture_Screenshot("1", "Order_Set"));
-		test.addScreenCaptureFromPath(Capture_Screenshot("1", "Order_Set"));
+		test.addScreenCaptureFromPath(Capture_Screenshot("1", "LaunchUrl"));
 		//validateWindow();
 				
 	}
@@ -54,7 +47,7 @@ public class LaunchUrl extends Base_Class {
     login.selectDB(DB);
     login.login(User_Name,User_Password);
     
-    test.addScreenCaptureFromPath(Capture_Screenshot("2", "Order_Set"));
+    test.addScreenCaptureFromPath(Capture_Screenshot("2", "LoginLogout"));
    // validateWindow();
    /* WebElement element;  
     WebDriverWait wait = new WebDriverWait(driver, 100);
@@ -137,7 +130,7 @@ public class LaunchUrl extends Base_Class {
    // driver.getCurrentUrl();
     
     test.log(Status.PASS, "Executing the TestCase "+TC_ID + "Order set is "+"Order_Set");
-    test.addScreenCaptureFromPath(Capture_Screenshot("2", "Order_Set"));
+    test.addScreenCaptureFromPath(Capture_Screenshot("2", "LoginLogout"));
    // validateWindow();
     }
     
@@ -184,9 +177,20 @@ public class LaunchUrl extends Base_Class {
         
       
        
-    @Test(priority=5)
-    public void testFullDataEntry() throws IOException {
+    @Test(priority=5,dataProvider="dp_Casecreation",dataProviderClass=DataProvider_Component.Testdataprovider.class)
+    public void testFullDataEntry(Map<String,String> Case) throws IOException, InterruptedException {
         test = extentreport.createTest("Full Data Entry Test");
+        FullDataEntry fde=new FullDataEntry(driver);
+       /* String TC_ID = Case.get("TC_ID");
+        String PriSrcCountry=Case.get("Primary_SrcCountry");
+    	String rTerm = Case.get("Reported_term");		
+    	String PDesc = Case.get("Product_Description");*/
+        
+        fde.setPriSrcCountry("Jordan");
+        fde.setLRDate();
+        fde.setEvent("COLD");
+        fde.setProduct("ANACIN");
+        //fde.selectIndications();
         test.log(Status.PASS,"FullDataEntry Test Pass");
         test.addScreenCaptureFromPath(Capture_Screenshot("5", "FullDataEntry"));
     }

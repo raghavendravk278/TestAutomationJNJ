@@ -9,6 +9,7 @@ import java.io.IOException;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 
 public class ExcelReadWrite {
 	
@@ -57,13 +58,13 @@ public class ExcelReadWrite {
 		if(cell==null)
 		celltext="";
 		
-		else if(cell.getCellType()==cell.CELL_TYPE_STRING)
+		else if(cell.getCellType()==Cell.CELL_TYPE_STRING)
 		celltext=cell.getStringCellValue();
 		
-		else if(cell.getCellType()==cell.CELL_TYPE_NUMERIC)
+		else if(cell.getCellType()==Cell.CELL_TYPE_NUMERIC)
 		celltext=String.valueOf(cell.getNumericCellValue());
 		
-		else if(cell.getCellType()==cell.CELL_TYPE_BLANK)
+		else if(cell.getCellType()==Cell.CELL_TYPE_BLANK)
 		celltext="";
 		
 		return celltext;
