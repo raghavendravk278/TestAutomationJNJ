@@ -1,0 +1,26 @@
+Why? To Automate Manual test cases
+
+Whats the use In Devops ?..this we will see in next demo.
+
+
+
+1Integration with CI & CD so that on deployment of build selenium scripts can execute
+2)Version controled and centralized repository
+3)Fits in testing role for devops.
+
+
+1)Framework Based--well structured
+
+2)Test NG Integrated
+
+3)Property file integration.
+
+4)Excel driven data
+
+5)Latest extend report
+
+6)screenshots captured.
+
+7)Git hub integrated
+
+8)Developed for Arisg.--Realtime

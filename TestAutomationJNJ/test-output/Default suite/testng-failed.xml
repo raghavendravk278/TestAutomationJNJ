@@ -5,9 +5,14 @@
     <classes>
       <class name="Scenario_Component.LaunchUrl">
         <methods>
+          <include name="testAerRegistration"/>
           <include name="getResult"/>
-          <include name="testFullDataEntry" invocation-numbers="0"/>
+          <include name="testFullDataEntry"/>
           <include name="tearDown"/>
+          <include name="testCaseIntake"/>
+          <include name="testLaunchUrl"/>
+          <include name="testLoginLogout"/>
+          <include name="testAERRegistrationInformation"/>
           <include name="setUp"/>
           <include name="Extent_Report"/>
         </methods>

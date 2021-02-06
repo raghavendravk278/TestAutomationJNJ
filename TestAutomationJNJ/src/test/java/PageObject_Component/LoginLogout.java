@@ -38,7 +38,7 @@ private WebElement classificationType;
 public LoginLogout(WebDriver driver)
 {
 	PageFactory.initElements(driver,this);
-	//this.driver=driver;
+	this.driver=driver;
 }
 @FindBy(name="dbnames")
 private WebElement dbName;
@@ -54,14 +54,9 @@ pwTB.sendKeys(pwd);
 loginBTN.click();
 }
 
-public void logout() {
-	//JavascriptExecutor js = (JavascriptExecutor)driver;
-	homePage.click();
-		
-	//newBTN.click();
-	//Explicit_wait(logoutBTN,30);
-	//classificationType.click();
-	
+public void logout()  {
+	driver.switchTo().defaultContent();
+    driver.switchTo().frame("navig");
 	logoutBTN.click();
 }
 }

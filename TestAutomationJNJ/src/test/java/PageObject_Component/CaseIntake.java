@@ -34,39 +34,6 @@ public class CaseIntake extends Base_Class {
 		driver.switchTo().frame("space");
 		Thread.sleep(1000);
 		generalMenu.click();
-		
-		/*
-		Actions action=new Actions(driver);
-		action.moveToElement(fMenu).click().perform();
-		
-		Robot robot=new Robot();
-	    robot.setAutoDelay(250);
-	    robot.keyPress(KeyEvent.VK_ALT);
-	    Thread.sleep(1000);
-	    robot.keyPress(KeyEvent.VK_F);
-	    Thread.sleep(1000);
-	    
-	    robot.keyPress(KeyEvent.VK_ENTER);
-	    Thread.sleep(1000);
-	    
-	    robot.keyRelease(KeyEvent.VK_ENTER);
-	    robot.keyRelease(KeyEvent.VK_F);
-	    robot.keyRelease(KeyEvent.VK_ALT);
-	    Thread.sleep(1000);
-	      
-	  
-	    robot.keyPress(KeyEvent.VK_CONTROL);
-	    Thread.sleep(1000);
-	    robot.keyPress(KeyEvent.VK_SHIFT);
-	    Thread.sleep(1000);
-	    
-	    robot.keyPress(KeyEvent.VK_G);
-	    Thread.sleep(1000);
-	    
-	    
-	    
-	    robot.keyRelease(KeyEvent.VK_G);
-	    robot.keyRelease(KeyEvent.VK_SHIFT);
-	    robot.keyRelease(KeyEvent.VK_CONTROL);*/
+	
 	}
 }

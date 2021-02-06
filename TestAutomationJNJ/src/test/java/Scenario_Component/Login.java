@@ -16,7 +16,7 @@ public class Login {
 		  INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
 
 
-		System.setProperty("webdriver.ie.driver", "D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\resources\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "resources/IEDriverServer.exe");
 		  
 		 //it is used to initialize the IE driver
 		 @SuppressWarnings("deprecation")
@@ -24,7 +24,7 @@ public class Login {
 		  
 		 driver.manage().window().maximize();
 
-		 driver.get("http://192.168.106.125:8180/Aris/login");
+		 driver.get("http://192.168.106.133:8180/Aris/login");
 		  
 		 driver.quit();
 		 }

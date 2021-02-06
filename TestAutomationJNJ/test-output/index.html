@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\00002453\AppData\Local\Temp\testng-eclipse-1186850983\testng-customsuite.xml</span>
+                    <span>C:\Users\00002453\AppData\Local\Temp\testng-eclipse--824452908\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Scenario_Component.LaunchUrl" hash-for-method="testAERRegistrationInformation">testAERRegistrationInformation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -112,7 +126,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Scenario_Component.LaunchUrl" hash-for-method="testFullDataEntry({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Cr...)">testFullDataEntry({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Cr...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Scenario_Component.LaunchUrl" hash-for-method="testFullDataEntry({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=...)">testFullDataEntry({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -122,7 +136,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Scenario_Component.LaunchUrl" hash-for-method="testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128,...)">testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128,...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Scenario_Component.LaunchUrl" hash-for-method="testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User...)">testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -137,6 +151,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Scenario_Component.LaunchUrl</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAERRegistrationInformation">
+                  </a> <!-- testAERRegistrationInformation -->
+                  <span class="method-name">testAERRegistrationInformation</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at Generic_Component.ExcelReadWrite.writecell(ExcelReadWrite.java:95)
+	at PageObject_Component.AERRegistrationinformation.getCaseNumber(AERRegistrationinformation.java:58)
+	at Scenario_Component.LaunchUrl.testAERRegistrationInformation(LaunchUrl.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -159,10 +219,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testFullDataEntry({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Cr...)">
-                  </a> <!-- testFullDataEntry({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Cr...) -->
+                  <a name="testFullDataEntry({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=...)">
+                  </a> <!-- testFullDataEntry({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=...) -->
                   <span class="method-name">testFullDataEntry</span>
-                  <span class="parameters">({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Primary_SrcCountry =Jordan})</span>
+                  <span class="parameters">({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=COLD, Primary_SrcCountry=Jordan})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -174,10 +234,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128,...)">
-                  </a> <!-- testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128,...) -->
+                  <a name="testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User...)">
+                  </a> <!-- testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User...) -->
                   <span class="method-name">testLoginLogout</span>
-                  <span class="parameters">({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128, User_Password=Password6})</span>
+                  <span class="parameters">({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User_Password=Password5})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,7 +245,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\00002453\AppData\Local\Temp\testng-eclipse-1186850983\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\00002453\AppData\Local\Temp\testng-eclipse--824452908\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -234,32 +294,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testFullDataEntry')
 data.setCell(0, 2, 'Scenario_Component.LaunchUrl')
-data.setCell(0, 3, 32824);
+data.setCell(0, 3, 86825);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testAerRegistration')
+data.setCell(1, 1, 'testLoginLogout')
 data.setCell(1, 2, 'Scenario_Component.LaunchUrl')
-data.setCell(1, 3, 13320);
+data.setCell(1, 3, 62523);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testLoginLogout')
+data.setCell(2, 1, 'testAERRegistrationInformation')
 data.setCell(2, 2, 'Scenario_Component.LaunchUrl')
-data.setCell(2, 3, 12335);
+data.setCell(2, 3, 32085);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testCaseIntake')
+data.setCell(3, 1, 'testAerRegistration')
 data.setCell(3, 2, 'Scenario_Component.LaunchUrl')
-data.setCell(3, 3, 6803);
+data.setCell(3, 3, 30383);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testLaunchUrl')
+data.setCell(4, 1, 'testCaseIntake')
 data.setCell(4, 2, 'Scenario_Component.LaunchUrl')
-data.setCell(4, 3, 138);
+data.setCell(4, 3, 20261);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testLaunchUrl')
+data.setCell(5, 2, 'Scenario_Component.LaunchUrl')
+data.setCell(5, 3, 362);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -292,51 +356,61 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">309 ms</span>
+                <span class="method-start">1042 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testLaunchUrl</span>
-                <span class="method-start">4202 ms</span>
+                <span class="method-start">13649 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=testLaunchUrl status=SUCCESS method=LaunchUrl.testLaunchUrl()[pri:1, instance:Scena...)</span>
-                <span class="method-start">4345 ms</span>
+                <span class="method-start">14019 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGDPUSER, TC_ID=JNJ_01, Database=AG74401_DP_128,...)</span>
-                <span class="method-start">4743 ms</span>
+                <span class="method-name">testLoginLogout({Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User...)</span>
+                <span class="method-start">15368 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=testLoginLogout status=SUCCESS method=LaunchUrl.testLoginLogout(java.util.Map)[pri:...)</span>
-                <span class="method-start">17078 ms</span>
+                <span class="method-start">77894 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testAerRegistration</span>
-                <span class="method-start">17086 ms</span>
+                <span class="method-start">77895 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=testAerRegistration status=SUCCESS method=LaunchUrl.testAerRegistration()[pri:3, in...)</span>
-                <span class="method-start">30408 ms</span>
+                <span class="method-start">108279 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testCaseIntake</span>
-                <span class="method-start">30409 ms</span>
+                <span class="method-start">108280 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=testCaseIntake status=SUCCESS method=LaunchUrl.testCaseIntake()[pri:4, instance:Sce...)</span>
-                <span class="method-start">37214 ms</span>
+                <span class="method-start">128543 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">testFullDataEntry({Execute_Flag=Y, Reported_term =COLD, Product_Description =ANACIN, TC_ID=JNJ_02, Script_name=Case_Cr...)</span>
-                <span class="method-start">37226 ms</span>
+                <span class="method-name">testFullDataEntry({Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=...)</span>
+                <span class="method-start">128553 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=testFullDataEntry status=SUCCESS method=LaunchUrl.testFullDataEntry(java.util.Map)[...)</span>
-                <span class="method-start">70052 ms</span>
+                <span class="method-start">215380 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAERRegistrationInformation</span>
+                <span class="method-start">215381 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=testAERRegistrationInformation status=FAILURE method=LaunchUrl.testAERRegistrationI...)</span>
+                <span class="method-start">247469 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">70091 ms</span>
+                <span class="method-start">247543 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

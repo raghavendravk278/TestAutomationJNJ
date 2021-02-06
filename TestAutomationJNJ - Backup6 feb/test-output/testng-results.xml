@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="6" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="126882" started-at="2021-02-04T02:08:08Z" finished-at="2021-02-04T02:10:15Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="126882" started-at="2021-02-04T02:08:08Z" finished-at="2021-02-04T02:10:15Z">
+      <class name="Scenario_Component.LaunchUrl">
+        <test-method status="PASS" signature="Extent_Report()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="Extent_Report" is-config="true" duration-ms="312" started-at="2021-02-04T02:08:08Z" finished-at="2021-02-04T02:08:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Extent_Report -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="setUp" is-config="true" duration-ms="4012" started-at="2021-02-04T02:08:08Z" finished-at="2021-02-04T02:08:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLaunchUrl()[pri:1, instance:Scenario_Component.LaunchUrl@1e127982]" name="testLaunchUrl" duration-ms="150" started-at="2021-02-04T02:08:13Z" finished-at="2021-02-04T02:08:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLaunchUrl -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="9" started-at="2021-02-04T02:08:13Z" finished-at="2021-02-04T02:08:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLaunchUrl status=SUCCESS method=LaunchUrl.testLaunchUrl()[pri:1, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="testLoginLogout(java.util.Map)[pri:2, instance:Scenario_Component.LaunchUrl@1e127982]" name="testLoginLogout" duration-ms="38862" started-at="2021-02-04T02:08:13Z" data-provider="dp_Userlogin" depends-on-methods="Scenario_Component.LaunchUrl.testLaunchUrl" finished-at="2021-02-04T02:08:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Execute_Flag=Y, Script_Name=User_Login, User_name=RAGNEW, TC_ID=JNJ_01, Database=ROCHE_TS_19C, User_Password=Password5}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginLogout -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="0" started-at="2021-02-04T02:08:52Z" finished-at="2021-02-04T02:08:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginLogout status=SUCCESS method=LaunchUrl.testLoginLogout(java.util.Map)[pri:2, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="testAerRegistration()[pri:3, instance:Scenario_Component.LaunchUrl@1e127982]" name="testAerRegistration" duration-ms="14674" started-at="2021-02-04T02:08:52Z" depends-on-methods="Scenario_Component.LaunchUrl.testLoginLogout" finished-at="2021-02-04T02:09:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAerRegistration -->
+        <test-method status="PASS" signature="testCaseIntake()[pri:4, instance:Scenario_Component.LaunchUrl@1e127982]" name="testCaseIntake" duration-ms="7377" started-at="2021-02-04T02:09:07Z" depends-on-methods="Scenario_Component.LaunchUrl.testAerRegistration" finished-at="2021-02-04T02:09:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseIntake -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="0" started-at="2021-02-04T02:09:07Z" finished-at="2021-02-04T02:09:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAerRegistration status=SUCCESS method=LaunchUrl.testAerRegistration()[pri:3, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="0" started-at="2021-02-04T02:09:14Z" finished-at="2021-02-04T02:09:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCaseIntake status=SUCCESS method=LaunchUrl.testCaseIntake()[pri:4, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="testFullDataEntry(java.util.Map)[pri:5, instance:Scenario_Component.LaunchUrl@1e127982]" name="testFullDataEntry" duration-ms="44484" started-at="2021-02-04T02:09:14Z" data-provider="dp_Casecreation" depends-on-methods="Scenario_Component.LaunchUrl.testCaseIntake" finished-at="2021-02-04T02:09:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Execute_Flag=Y, Product_Description=ANACIN, TC_ID=JNJ_02, Script_name=Case_Creation, Reported_term=COLD, Primary_SrcCountry=Jordan}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFullDataEntry -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="1" started-at="2021-02-04T02:09:59Z" finished-at="2021-02-04T02:09:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFullDataEntry status=SUCCESS method=LaunchUrl.testFullDataEntry(java.util.Map)[pri:5, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="FAIL" signature="testAERRegistrationInformation()[pri:6, instance:Scenario_Component.LaunchUrl@1e127982]" name="testAERRegistrationInformation" duration-ms="16565" started-at="2021-02-04T02:09:59Z" depends-on-methods="Scenario_Component.LaunchUrl.testFullDataEntry" finished-at="2021-02-04T02:10:15Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at Generic_Component.ExcelReadWrite.writecell(ExcelReadWrite.java:95)
+at PageObject_Component.AERRegistrationinformation.getCaseNumber(AERRegistrationinformation.java:56)
+at Scenario_Component.LaunchUrl.testAERRegistrationInformation(LaunchUrl.java:225)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAERRegistrationInformation -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="getResult" is-config="true" duration-ms="5" started-at="2021-02-04T02:10:15Z" finished-at="2021-02-04T02:10:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAERRegistrationInformation status=FAILURE method=LaunchUrl.testAERRegistrationInformation()[pri:6, instance:Scenario_Component.LaunchUrl@1e127982] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Scenario_Component.LaunchUrl@1e127982]" name="tearDown" is-config="true" duration-ms="692" started-at="2021-02-04T02:10:15Z" finished-at="2021-02-04T02:10:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Scenario_Component.LaunchUrl -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

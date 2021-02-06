@@ -35,7 +35,7 @@ public class Testdataprovider {
 	public static Iterator<Object[]> commontestdata(String sheetname,String scriptname) throws IOException
 	{
 		
-		ExcelReadWrite xl= new ExcelReadWrite("D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\TestData\\Test_Data.xls");
+		ExcelReadWrite xl= new ExcelReadWrite("TestData/Test_Data.xls");
 		HSSFSheet Sheet = xl.Setsheet(sheetname);
 		
 		int RowCount = xl.getrowcount(Sheet);

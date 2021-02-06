@@ -2,12 +2,12 @@ package PageObject_Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -49,6 +49,27 @@ public class FullDataEntry extends Base_Class {
 	@FindBy(xpath="//input[@value='OK']")
 	private WebElement selectOK;
 	
+	@FindBy(xpath="//input[@id='yes']")
+	private WebElement submitCase;
+	
+	@FindBy(xpath="//input[@id='no']")
+	private WebElement completeActivity;
+	
+	@FindBy(xpath="//input[@id='yes']")
+	private WebElement closeAER;
+	
+	@FindBy(xpath="//*[@id='svg_31']")
+	private WebElement logoutBTN;
+	
+	@FindBy(xpath="//input[@id='AerNo']")
+	private WebElement AerNo;
+	
+	@FindBy(xpath="//div[@id='caseInfo']")
+	private WebElement AerNo1;
+	
+	@FindBy(xpath="//input[@name='/I=101002/G=10101/D=C/CA=U/']")
+	private WebElement AerNo3;
+	
 	public void setLRDate() {
 		Date date= new Date();
 		SimpleDateFormat df= new SimpleDateFormat("dd-MM-yyyy");
@@ -68,9 +89,10 @@ public class FullDataEntry extends Base_Class {
 		Thread.sleep(1000);
 		
 		Select objCountrySelect=new Select(priSrcCountry);
-		objCountrySelect.selectByVisibleText(Country);
+		//objCountrySelect.selectByIndex(1);
+		objCountrySelect.selectByVisibleText(Country.toString());
 	}
-	
+
 	
 	public void setEvent(String caseEvent) throws InterruptedException {
 		Thread.sleep(1000);
@@ -86,38 +108,142 @@ public class FullDataEntry extends Base_Class {
 		product.click();
 		Thread.sleep(1000);
 		
-		
-		/*driver.switchTo().frame("AerFrame1");
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("space");
+		Thread.sleep(1000);
+		driver.switchTo().frame("AerFrame1");
 		
 		Thread.sleep(1000);
 		productDescription.click();
-		productDescription.sendKeys(caseProduct);
-		Thread.sleep(1000);*/
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("document.getElementById('115103').click;");
-		js.executeScript("document.getElementById('115103').value='"+caseProductValue+"'");
-		js.executeScript("document.getElementById('115103').click;");
-		
-		  Actions act = new Actions(driver);
-		   
-		   act.sendKeys(Keys.TAB).build().perform();
-		   act.sendKeys(Keys.TAB).build().perform();
-		   act.sendKeys(Keys.TAB).build().perform();
-		   act.sendKeys(Keys.RETURN).build().perform();
+		productDescription.sendKeys(caseProductValue);
+		productDescription.sendKeys(Keys.TAB);
+		Thread.sleep(1000);
 		   
 		
+		
+		
+	}
+	public void selectIndications() throws InterruptedException {
+		Thread.sleep(2000);
+		String currentWindow = driver.getWindowHandle();// get handle of current window
+	    System.out.println("Current Window of Product Secton is"+currentWindow);
+	    
+		Set<String> handles = driver.getWindowHandles();// get handle of all windows
+		System.out.println(handles.size());
+		System.out.println(handles);
+		for(String window: handles) {
+			driver.switchTo().window(window);
+			if(driver.getTitle().contains("Applicable Indications")) {
+				System.out.println(driver.getTitle());
+				Thread.sleep(1000);
+				driver.switchTo().defaultContent();
+				driver.switchTo().frame("statusFrame2");
+				Thread.sleep(2000);
+				selectAll.click();
+				selectOK.click();
+				
+				Thread.sleep(1000);
+				driver.switchTo().window(currentWindow);
+				driver.switchTo().defaultContent();
+				driver.switchTo().frame("navig");
+				Thread.sleep(1000);
+				saveCase.click();
+				Thread.sleep(2000);
+				
+				
+			}
+		}
+		
+		
+	}
+	public void saveCase() throws InterruptedException {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("navig");
 		Thread.sleep(1000);
 		saveCase.click();
+	}
+	public void getAERNO() throws InterruptedException {
+		Thread.sleep(2000);
+	
 		
 	}
-	public void selectIndications() throws InterruptedException {
+	public void submitCase() throws InterruptedException {
+		Thread.sleep(3000);
+		String currentWindow = driver.getWindowHandle();// get handle of current window
+	    System.out.println("Current Window of Product Secton 2 is"+currentWindow);
+	    
+		Set<String> handles = driver.getWindowHandles();// get handle of all windows
+		//System.out.println(handles.size());
+		//System.out.println(handles);
+		for(String window: handles) {
+			driver.switchTo().window(window);
+			
+			if(driver.getTitle().equals("ARISg7")) {
+				System.out.println(driver.getTitle());
+				System.out.println("Found");			
+				Thread.sleep(2000);
+				submitCase.click();
+				
+			   }
+		
+	           }//end of for loop
+		
+		driver.switchTo().window(currentWindow);
+               }
+
+	public void completeActivity() throws InterruptedException {
+		Thread.sleep(2000);
+		String currentWindow = driver.getWindowHandle();// get handle of current window
+	    System.out.println("Current Window of Product Secton 3 is"+currentWindow);
+	    
+		Set<String> handles = driver.getWindowHandles();// get handle of all windows
+		//System.out.println(handles.size());
+		//System.out.println(handles);
+		for(String window: handles) {
+			driver.switchTo().window(window);
+			
+			if(driver.getTitle().equals("ARISg7")) {
+				System.out.println(driver.getTitle());
+				System.out.println("Found");			
+				Thread.sleep(2000);
+				completeActivity.click();
+				
+			   }
+		
+	           }//end of for loop
+		
+		driver.switchTo().window(currentWindow);
+               }
+	
+	public void closeAER() throws InterruptedException {
+		Thread.sleep(2000);
+		String currentWindow = driver.getWindowHandle();// get handle of current window
+	    System.out.println("Current Window of Product Secton 3 is"+currentWindow);
+	    
+		Set<String> handles = driver.getWindowHandles();// get handle of all windows
+		System.out.println(handles.size());
+		System.out.println(handles);
+		for(String window: handles) {
+			driver.switchTo().window(window);
+			
+			if(driver.getTitle().equals("ARISg7")) {
+				System.out.println(driver.getTitle());
+				System.out.println("Found");			
+				Thread.sleep(2000);
+				closeAER.click();
+				
+			   }
+		
+	           }//end of for loop
+		
+		driver.switchTo().window(currentWindow);
+               }
+	
+	
+	public void logout()  {
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("statusFrame2");
-		Thread.sleep(1000);
-		selectAll.click();
-		selectOK.click();
+	    driver.switchTo().frame("navig");
+		logoutBTN.click();
 	}
+
 }

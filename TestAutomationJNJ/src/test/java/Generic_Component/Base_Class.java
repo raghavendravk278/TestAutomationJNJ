@@ -5,13 +5,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -59,9 +55,9 @@ public class Base_Class {
 		
 		TakesScreenshot screenshot= (TakesScreenshot) driver;
 		File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotAs, new File("D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str));
-		String path="D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+ str;
-		System.out.println("Path is"+path);
+		FileUtils.copyFile(screenshotAs, new File("Screenshot/"+TC_ID+"-"+Order_Set+"-"+ str));
+		String path="Screenshot/"+TC_ID+"-"+Order_Set+"-"+ str;
+		//System.out.println("Path is"+path);
 		return path;
 		
 		
@@ -96,111 +92,32 @@ public class Base_Class {
 	@SuppressWarnings("deprecation")
 	@BeforeClass
 	public void setUp() throws IOException{
-		//System.setProperty("webdriver.chrome.driver", "D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\resources\\chromedriver.exe");
-		
-		
+						
 		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
 		capabilities.setCapability(InternetExplorerDriver.
 				  INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
-		System.setProperty("webdriver.ie.driver", "D:\\selenium\\git\\TestAutomationJNJ\\TestAutomationJNJ\\resources\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "resources/IEDriverServer.exe");
 		
 		capabilities.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL,false);
-		//capabilities.setCapability("initialBrowserUrl", "http://192.168.106.125:8180/Aris/login");
-		//driver=new ChromeDriver();
 		
 		driver=new InternetExplorerDriver(capabilities);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		//String parentWindow= driver.getWindowHandle();
-		//System.out.println("First Window"+parentWindow);
-		//System.out.println(driver.switchTo().frame(1));
-		/* 1 Set<String> handlesSet = driver.getWindowHandles();
-		System.out.println(handlesSet);
-        List<String> handlesList = new ArrayList<String>(handlesSet);
-        for(String curWindow : handlesList){
-           driver.switchTo().window(curWindow);
-           System.out.println(curWindow);
-        }
 		
-		Set<String> beforePopup = driver.getWindowHandles(); 
-		System.out.println("Before"+beforePopup.size());
-		//click which causes to open new window
-		*/
-		
-		/* 2 // get all the window handles after the popup window appears 
-		Set<String> afterPopup = driver.getWindowHandles(); 
-		System.out.println("After"+afterPopup.size());
-		
-		
-		// remove all the handles from before the popup window appears afterPopup.removeAll(beforePopup); 
-		// there should be only one window handle left 
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-		if(afterPopup.size() == 1) 
-		{ 
-		        driver.switchTo().window((String)afterPopup.toArray()[0]); 
-		        driver.getTitle();
-		        System.out.println("Inside If");
-		        //driver.close();
-		}
-		*/
-		
-		//driver.switchTo().frame(0);
-		//driver.switchTo().frame(driver.findElement(By.partialLinkText("Forgot")));
-         //driver.switchTo().window(parentWindow);
-	   // System.out.println("Size is"+handlesList.size());
-		//driver.switchTo().window(handlesList.get(1));
-	    //driver.close();
-	    //driver.switchTo().window(tabs2.get(1));
-		//driver=new InternetExplorerDriver();
-		//driver.manage().deleteAllCookies();
-        //driver.manage().timeouts().implicitlyWait(WaitTimeConstants.WAIT_TIME_LONG, TimeUnit.SECONDS);
-		
-		//initiateEyes();
-		//driver.get("http://192.168.106.125:8180/Aris/login");
 		try {
 			String url=Utility_class.Reading_properties("URL");
 			driver.get(url);
-			System.out.println("Url launch check1");
-			/*4 driver=new InternetExplorerDriver(capabilities);
-		 //Code for wait for new page
-			
-			// get all the window handles after the popup window appears 
-			Set<String> afterPopup = driver.getWindowHandles(); 
-			System.out.println("After"+afterPopup.size());
-			
-			
-			// remove all the handles from before the popup window appears afterPopup.removeAll(beforePopup); 
-			// there should be only one window handle left 
-			WebDriverWait wait = new WebDriverWait(driver,10);
-			wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-			if(afterPopup.size() == 1) 
-			{ 
-			        driver.switchTo().window((String)afterPopup.toArray()[0]); 
-			        driver.getTitle();
-			        System.out.println("Switching to new window");
-			        
-			        //driver.close();
-			}
-			
-			
-			//End of wait 
-			
-			*/
-			
-			
-			//log.info("Passed as Actual Result is  "+"Actual_Result" + " Same as Expected Result "+"Exp_Result");
-		   //Capture_Screenshot("1", "Order_Set");
-		   //System.out.println("Captured  scrresnhot");
+			System.out.println("Url launch check");
+		
 		} catch (NoSuchWindowException e) {
 			// TODO Auto-generated catch block
 			System.out.println("URL is not available");
 		}
 		
 		Set<String> afterPopup = driver.getWindowHandles(); 
-		System.out.println("After"+afterPopup.size());
+		//System.out.println("After"+afterPopup.size());
 		
 		System.out.println(driver.getTitle());
 		System.out.println("Setup Complete");
@@ -250,7 +167,7 @@ public class Base_Class {
 	
 	@AfterSuite
     public void tearDown() {
-    	//to write or update test information to reporter
+    	
 	
     	extentreport.flush();
     	//driver.quit();
